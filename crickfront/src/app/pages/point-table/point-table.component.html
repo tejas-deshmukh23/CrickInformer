@@ -1,1 +1,32 @@
-<p>point-table works!</p>
+<div class="table-container">
+    <h1 class="text-4xl font-extrabold text-gray-700 px-2">Point Table</h1>
+    <div class="mt-2 overflow-x-auto">
+        <table class="shadow-gray-500 w-full divide-y divide-gray-200 shadow-lg rounded-lg overflow-hidden">
+          <thead class="bg-gray-50">
+            <tr>
+                @for (heading of tableHeading; track $index) {
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">{{heading}}</th>
+                }
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            
+            @for (team of pointTable; track $index) {
+                <tr class="hover:font-bold hover:bg-gray-100 hover:scale-x-110 cursor-pointer transition-all" [ngClass]="{
+                  'bg-green-200':$index<=4,
+                  'bg-red-200':$index>4
+                }">
+                  
+                    @if ($index>0) {
+                        @for (data of team; track $index) {
+                        <td class="px-6 py-4 text-center whitespace-nowrap">{{data}}</td>
+                    }
+                    }
+                    
+                  </tr>
+            }
+            
+          </tbody>
+        </table>
+      </div>
+</div>

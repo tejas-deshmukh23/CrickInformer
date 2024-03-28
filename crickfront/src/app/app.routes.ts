@@ -6,6 +6,17 @@ import { PointTableComponent } from './pages/point-table/point-table.component';
 
 export const routes: Routes = [
     {
+        path:"",
+        redirectTo:"live",
+        pathMatch:'full'
+    },
+    {
+        path:"home",
+        redirectTo:"live",
+        pathMatch:'full'
+
+    },
+    {
         path:"home",
         component:HomeComponent,
         title:"Home | CrickInformer"
